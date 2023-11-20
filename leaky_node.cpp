@@ -11,14 +11,14 @@
 class LeakyNode : public rclcpp::Node {
 public:
     explicit LeakyNode(const std::string &name) : Node(name) {
-        this->declare_parameter("my_parameter", "world");
+        // this->declare_parameter("my_parameter", "world");
     }
 };
 
 int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
 
-    const size_t N_NODES = 10;
+    const size_t N_NODES = 1;
     std::vector<std::shared_ptr<LeakyNode>> nodes;
     std::cerr << "Creating " << N_NODES << " nodes" << std::endl;
     for (int i = 0; i < N_NODES; ++i) {
